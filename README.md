@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img alt="Panshul Gera — fintech engineer in Toronto" src="assets/banner-dark.svg" width="100%">
+  <img alt="Panshul Gera — fintech engineer, Toronto" src="assets/banner-dark.svg" width="100%">
 </picture>
 
 <p align="center">
@@ -26,11 +26,11 @@
 
 `Python` · `Streamlit` · `PyMuPDF`
 
-Congressional trade disclosures, market data and LLM analysis in one place.
+Parses U.S. House STOCK Act trade disclosures out of the Clerk's PDFs into a
+queryable database, alongside market data and optional LLM analysis.
 
-**The problem was the PDFs.** The House Clerk publishes STOCK Act filings with
-no ruling lines and a text layer that extracts as `Pʇʔʋʑʆʋʅ`. It's a small-caps
-font mapped at a fixed `+0x222` Unicode offset — so it inverts exactly.
+The filings have no ruling lines and a text layer that extracts as
+`Pʇʔʋʑʆʋʅ` — a small-caps font mapped at a fixed `+0x222` Unicode offset.
 
 ```
 7,667 transactions
@@ -38,7 +38,7 @@ font mapped at a fixed `+0x222` Unicode offset — so it inverts exactly.
     0 parse errors
 ```
 
-Trades plot straight onto the price chart.
+Disclosed trades are plotted on the price chart. 49 tests.
 
 </td>
 <td width="33%" valign="top">
@@ -47,19 +47,19 @@ Trades plot straight onto the price chart.
 
 `Swift` · `AppKit` · `CGEventTap`
 
-Copy several things. Paste the one you want. Hold ⌘, tap `V` to walk back
-through clipboard history.
+macOS clipboard manager. Hold ⌘, tap `V` to cycle back through history; type
+to filter; release to paste.
 
-**Modelled on ⌘Tab** — a quick tap pastes normally, so ordinary paste is
-untouched. Only holding ⌘ reveals the list.
-
-Needed an event tap that can genuinely *consume* a keystroke. A global monitor
-can watch ⌘V go past but never stop it.
+A quick ⌘V tap still pastes the most recent item with no overlay, so ordinary
+paste is unchanged. Uses a `CGEventTap` because a global monitor can observe
+⌘V but cannot consume it.
 
 ```
 66 tests
  0 new shortcuts
 ```
+
+Menu bar app, per-app paste delivery rules.
 
 </td>
 <td width="33%" valign="top">
@@ -68,39 +68,22 @@ can watch ⌘V go past but never stop it.
 
 `Python` · `PyTorch` · `scikit-learn`
 
-Benign vs malignant from nine cytological attributes — and which mistake we're
-actually trying to avoid.
+Benign vs malignant classification from nine cytological attributes, on the
+Wisconsin breast cytology dataset.
 
-**Every model lands near 96%.** The real lever was the decision threshold.
-Moving it off the default 0.5:
+Compares logistic regression, random forest and a PyTorch MLP under repeated
+stratified k-fold. Moving the decision threshold off the default 0.5:
 
 ```
 12 → 2 missed
     +3 false alarms
 ```
 
-The neural net never beat logistic regression. Worth saying out loud.
+14 tests. Every figure regenerated from source.
 
 </td>
 </tr>
 </table>
-
----
-
-## How I tend to work
-
-```python
-while building:
-    assumption = find_the_thing_everyone_took_for_granted()
-    if assumption.is_load_bearing():
-        measure(assumption)      # not a guess, an actual number
-    ship(smallest_thing_that_respects_the_constraint)
-```
-
-Three examples of that from the projects above: the "corrupted" PDF text was a
-fixed Unicode offset. The clipboard app didn't need a new shortcut, it needed
-the one people already press. The cancer model didn't need a better
-architecture, it needed a better threshold.
 
 ---
 
@@ -116,8 +99,7 @@ architecture, it needed a better threshold.
 
 <div align="center">
 
-**Working in fintech in Toronto** 🇨🇦
-Currently curious about how much of ML engineering is really just choosing the right thing to care about.
+Fintech engineer · Toronto 🇨🇦
 
 <a href="mailto:rdp.gera@gmail.com">
   <img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email">

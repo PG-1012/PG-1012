@@ -53,7 +53,7 @@ def build(theme_name: str) -> str:
         for y in range(0, H, 40)
     )
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Panshul Gera — building things that make a decision easier">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Panshul Gera — fintech engineer, Toronto">
   <defs>
     <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="{c['bg']}" stop-opacity="0"/>
@@ -94,9 +94,8 @@ def build(theme_name: str) -> str:
 
   <text class="mono" x="56" y="150" font-size="27" font-weight="700" fill="{c['text']}">Panshul Gera<tspan class="cursor" fill="{c['accent']}">_</tspan></text>
 
-  <text class="mono" x="56" y="182" font-size="13" fill="{c['dim']}">Fintech engineer in Toronto.</text>
-  <text class="mono" x="56" y="202" font-size="13" fill="{c['dim']}">I build things that make a decision easier — usually by finding</text>
-  <text class="mono" x="56" y="222" font-size="13" fill="{c['dim']}">the constraint everyone assumed was fixed.</text>
+  <text class="mono" x="56" y="184" font-size="13" fill="{c['dim']}">Fintech engineer · Toronto</text>
+  <text class="mono" x="56" y="206" font-size="13" fill="{c['dim']}">Python · Swift · TypeScript · PyTorch</text>
 
   <!-- A real result, used as ornament: recall against decision threshold. -->
   <g transform="translate(700, 104)">
@@ -106,7 +105,7 @@ def build(theme_name: str) -> str:
     <circle cx="232" cy="4.4" r="3.5" fill="{c['green']}"/>
     <line x1="0" y1="86" x2="232" y2="86" stroke="{c['border']}" stroke-width="1"/>
     <text class="mono" x="0" y="104" font-size="10" fill="{c['dim']}">threshold</text>
-    <text class="mono" x="160" y="104" font-size="10" fill="{c['green']}">99% recall</text>
+    <text class="mono" x="176" y="104" font-size="10" fill="{c['dim']}">recall</text>
   </g>
 </svg>
 '''
