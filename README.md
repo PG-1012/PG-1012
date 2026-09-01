@@ -16,10 +16,7 @@
 
 ---
 
-## What I've been building
-
-Three projects, each one where the interesting part turned out to be something
-other than the code.
+## Some stuff i worked on:
 
 <table>
 <tr>
