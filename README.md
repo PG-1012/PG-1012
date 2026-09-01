@@ -36,9 +36,9 @@ no ruling lines and a text layer that extracts as `Pʇʔʋʑʆʋʅ`. It's a smal
 font mapped at a fixed `+0x222` Unicode offset — so it inverts exactly.
 
 ```
-7,667  transactions parsed
-99.5%  passing validation
-    0  parse errors
+7,667 transactions
+99.5% validated
+    0 parse errors
 ```
 
 Trades plot straight onto the price chart.
@@ -60,8 +60,8 @@ Needed an event tap that can genuinely *consume* a keystroke. A global monitor
 can watch ⌘V go past but never stop it.
 
 ```
-66  tests
- 1  keystroke you already press
+66 tests
+ 0 new shortcuts
 ```
 
 </td>
@@ -78,8 +78,8 @@ actually trying to avoid.
 Moving it off the default 0.5:
 
 ```
-12 → 2  missed malignancies
-    +3  false alarms
+12 → 2 missed
+    +3 false alarms
 ```
 
 The neural net never beat logistic regression. Worth saying out loud.
@@ -108,10 +108,11 @@ architecture, it needed a better threshold.
 ---
 
 <div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=PG-1012&show_icons=true&hide_border=true&theme=github_dark&hide_title=true&card_width=420" alt="GitHub stats" height="150">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PG-1012&layout=compact&hide_border=true&theme=github_dark&card_width=280" alt="Top languages" height="150">
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg">
+  <img alt="Languages by bytes written across public repositories" src="assets/stats-dark.svg" width="480">
+</picture>
 </div>
 
 ---
