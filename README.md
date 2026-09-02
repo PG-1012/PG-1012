@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img alt="Panshul Gera — fintech engineer, Toronto" src="assets/banner-dark.svg" width="100%">
+  <img alt="Panshul Gera — Finance, AI, Deep Tech, Toronto" src="assets/banner-dark.svg" width="100%">
 </picture>
 
 <p align="center">
@@ -99,7 +99,7 @@ stratified k-fold. Moving the decision threshold off the default 0.5:
 
 <div align="center">
 
-Fintech engineer · Toronto 🇨🇦
+Finance · AI · Deep Tech · Toronto 🇨🇦
 
 <a href="mailto:rdp.gera@gmail.com">
   <img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email">
