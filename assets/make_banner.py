@@ -17,7 +17,7 @@ NAME = "Panshul Gera"
 
 # Two lines under the name. Keep each under ~46 characters or it will run
 # into the chart on the right.
-LINE_1 = "Fintech engineer · Toronto"
+LINE_1 = "Finance · AI · Deep Tech · Toronto"
 LINE_2 = "Python · Swift · TypeScript · PyTorch"
 
 # The fake terminal's title bar and prompt.
@@ -27,7 +27,7 @@ PROMPT_BRANCH = "main"
 PROMPT_COMMAND = "whoami"
 
 # Screen-reader description. Keep it in step with the text above.
-ALT_TEXT = "Panshul Gera — fintech engineer, Toronto"
+ALT_TEXT = "Panshul Gera — Finance, AI, Deep Tech, Toronto"
 
 # ─────────────────────────────────────────────────────────────────────────────
 
