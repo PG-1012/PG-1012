@@ -8,6 +8,31 @@ swaps variants with <picture> + prefers-color-scheme.
 
 from pathlib import Path
 
+# ─────────────────────────────────────────────────────────────────────────────
+#  EDIT THIS BLOCK, then run:  python3 assets/make_banner.py
+#  Everything below it is layout and does not need touching.
+# ─────────────────────────────────────────────────────────────────────────────
+
+NAME = "Panshul Gera"
+
+# Two lines under the name. Keep each under ~46 characters or it will run
+# into the chart on the right.
+LINE_1 = "Fintech engineer · Toronto"
+LINE_2 = "Python · Swift · TypeScript · PyTorch"
+
+# The fake terminal's title bar and prompt.
+TERMINAL_TITLE = "panshul — zsh — 100×28"
+PROMPT_PATH = "~/panshul"
+PROMPT_BRANCH = "main"
+PROMPT_COMMAND = "whoami"
+
+# Screen-reader description. Keep it in step with the text above.
+ALT_TEXT = "Panshul Gera — fintech engineer, Toronto"
+
+# ─────────────────────────────────────────────────────────────────────────────
+
+MAX_LINE = 46
+
 OUT = Path(__file__).resolve().parent
 
 W, H = 1000, 260
@@ -53,7 +78,7 @@ def build(theme_name: str) -> str:
         for y in range(0, H, 40)
     )
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Panshul Gera — fintech engineer, Toronto">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{ALT_TEXT}">
   <defs>
     <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="{c['bg']}" stop-opacity="0"/>
@@ -87,15 +112,15 @@ def build(theme_name: str) -> str:
   <circle cx="52" cy="47" r="5.5" fill="{c['red']}"/>
   <circle cx="72" cy="47" r="5.5" fill="{c['amber']}"/>
   <circle cx="92" cy="47" r="5.5" fill="{c['green']}"/>
-  <text class="mono" x="118" y="51" font-size="12" fill="{c['dim']}">panshul — zsh — 100×28</text>
+  <text class="mono" x="118" y="51" font-size="12" fill="{c['dim']}">{TERMINAL_TITLE}</text>
 
   <!-- prompt -->
-  <text class="mono" x="56" y="108" font-size="14"><tspan fill="{c['green']}">\u279c</tspan><tspan fill="{c['accent']}" xml:space="preserve">  ~/panshul </tspan><tspan fill="{c['dim']}">git:(</tspan><tspan fill="{c['red']}">main</tspan><tspan fill="{c['dim']}">)</tspan><tspan fill="{c['text']}" xml:space="preserve"> whoami</tspan></text>
+  <text class="mono" x="56" y="108" font-size="14"><tspan fill="{c['green']}">\u279c</tspan><tspan fill="{c['accent']}" xml:space="preserve">  {PROMPT_PATH} </tspan><tspan fill="{c['dim']}">git:(</tspan><tspan fill="{c['red']}">{PROMPT_BRANCH}</tspan><tspan fill="{c['dim']}">)</tspan><tspan fill="{c['text']}" xml:space="preserve"> {PROMPT_COMMAND}</tspan></text>
 
-  <text class="mono" x="56" y="150" font-size="27" font-weight="700" fill="{c['text']}">Panshul Gera<tspan class="cursor" fill="{c['accent']}">_</tspan></text>
+  <text class="mono" x="56" y="150" font-size="27" font-weight="700" fill="{c['text']}">{NAME}<tspan class="cursor" fill="{c['accent']}">_</tspan></text>
 
-  <text class="mono" x="56" y="184" font-size="13" fill="{c['dim']}">Fintech engineer · Toronto</text>
-  <text class="mono" x="56" y="206" font-size="13" fill="{c['dim']}">Python · Swift · TypeScript · PyTorch</text>
+  <text class="mono" x="56" y="184" font-size="13" fill="{c['dim']}">{LINE_1}</text>
+  <text class="mono" x="56" y="206" font-size="13" fill="{c['dim']}">{LINE_2}</text>
 
   <!-- A real result, used as ornament: recall against decision threshold. -->
   <g transform="translate(700, 104)">
@@ -112,6 +137,10 @@ def build(theme_name: str) -> str:
 
 
 def main() -> None:
+    for label, line in (("LINE_1", LINE_1), ("LINE_2", LINE_2)):
+        if len(line) > MAX_LINE:
+            print(f"warning: {label} is {len(line)} chars; over {MAX_LINE} it "
+                  f"will overlap the chart on the right")
     for name in THEMES:
         path = OUT / f"banner-{name}.svg"
         path.write_text(build(name))
